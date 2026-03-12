@@ -1,0 +1,19 @@
+universe                = docker
+docker_image            = prso00001/trak_grad_new_v8:cuda
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+
+output                  = /home/exml_team013/trak/logs/exml.$(ClusterId).$(ProcId).out
+error                   = /home/exml_team013/trak/logs/exml.$(ClusterId).$(ProcId).err
+log                     = /home/exml_team013/trak/logs/exml.$(ClusterId).log
+
+request_GPUs            = 1
+request_CPUs            = 4
+request_memory          = 8G
+
+requirements            = UidDomain == "cs.uni-saarland.de"
++WantGPUHomeMounted     = true
++MaxRuntime             = 86400
+
+queue 1
